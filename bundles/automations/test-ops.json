@@ -1,0 +1,16 @@
+{
+  "_id": "61649f2e2f03f00108fcc88c",
+  "name": "test-ops",
+  "description": "",
+  "componentName": "certify",
+  "componentType": "workflows",
+  "gbac": {
+    "write": [],
+    "read": []
+  },
+  "created": "2021-10-11T20:31:42.706Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2022-01-27T16:07:09.539Z",
+  "lastUpdatedBy": "clarisa.colton@itential.com",
+  "triggers": []
+}
