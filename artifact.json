@@ -1,0 +1,366 @@
+{
+  "metadata": {
+    "name": "@itentialopensource/final-ops-test",
+    "version": "0.0.1",
+    "description": "Some description",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "local",
+      "hostname": "localhost",
+      "path": "/"
+    },
+    "keywords": [
+      "Itential",
+      "IAP",
+      "artifacts"
+    ],
+    "author": "Itential Automation Platform",
+    "IAPDependencies": {
+      "@itential/app-operations_manager": "",
+      "@itential/app-json_forms": "",
+      "@itential/app-workflow_engine": ""
+    }
+  },
+  "manifest": {
+    "bundleName": "@itentialopensource/final-ops-test",
+    "fingerprint": "63288d9e78501471ebb1ce27",
+    "createdEpoch": "1663602078680",
+    "artifacts": [
+      {
+        "id": "test-ops",
+        "name": "test-ops",
+        "type": "automation",
+        "location": "/bundles/automations/test-ops.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "certify",
+        "name": "certify",
+        "type": "workflow",
+        "location": "/bundles/workflows/certify.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "form-test",
+        "name": "form-test",
+        "type": "json-forms",
+        "location": "/bundles/json_forms/form-test.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "61bb6f022f7f9e00e72ae6ed",
+        "name": "login",
+        "type": "transformation",
+        "location": "/bundles/transformations/login.json",
+        "properties": {
+          "entryPoint": false
+        }
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "type": "automation",
+      "data": {
+        "_id": "61649f2e2f03f00108fcc88c",
+        "name": "test-ops",
+        "description": "",
+        "componentName": "certify",
+        "componentType": "workflows",
+        "gbac": {
+          "write": [],
+          "read": []
+        },
+        "created": "2021-10-11T20:31:42.706Z",
+        "createdBy": "admin@pronghorn",
+        "lastUpdated": "2022-01-27T16:07:09.539Z",
+        "lastUpdatedBy": "clarisa.colton@itential.com",
+        "triggers": []
+      }
+    },
+    {
+      "type": "workflow",
+      "data": {
+        "canvasVersion": 1,
+        "created": "2021-10-26T13:50:28.114Z",
+        "createdVersion": "5.40.5-2021.1.28.0",
+        "created_by": {
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn",
+          "firstname": "admin",
+          "inactive": true,
+          "email": ""
+        },
+        "font_size": 12,
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+        "last_updated": "2022-02-22T19:37:12.229Z",
+        "last_updated_by": {
+          "provenance": "Itential-Okta",
+          "username": "clarisa.colton@itential.com",
+          "firstname": "Clarisa",
+          "inactive": false
+        },
+        "name": "certify",
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "_id": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{24}$"
+            },
+            "initiator": {
+              "type": "string"
+            }
+          }
+        },
+        "tasks": {
+          "workflow_start": {
+            "name": "workflow_start",
+            "groups": [],
+            "x": 0,
+            "y": 0.5
+          },
+          "workflow_end": {
+            "name": "workflow_end",
+            "groups": [],
+            "x": 1,
+            "y": 0.5
+          },
+          "4d11": {
+            "name": "transformation",
+            "canvasName": "transformation",
+            "summary": "login",
+            "description": "Perform a JSON Transformation using the JST library.",
+            "location": "Application",
+            "locationType": null,
+            "app": "WorkFlowEngine",
+            "type": "operation",
+            "displayName": "WorkFlowEngine",
+            "variables": {
+              "incoming": {
+                "tr_id": "61bb6f022f7f9e00e72ae6ed",
+                "variableMap": {
+                  "login": {
+                    "user": "sasa",
+                    "pw": "abc123"
+                  }
+                },
+                "options": {
+                  "extractOutput": false,
+                  "validateIncoming": true,
+                  "revertToDefaultValue": true
+                }
+              },
+              "outgoing": {
+                "user": null,
+                "password": null
+              },
+              "decorators": [
+                {
+                  "type": "encryption",
+                  "pointer": "/outgoing/user"
+                },
+                {
+                  "type": "encryption",
+                  "pointer": "/outgoing/password"
+                }
+              ]
+            },
+            "deprecated": false,
+            "matched": [
+              {
+                "key": "description",
+                "highlightString": "Perform a JSON Transformation using the <span class='highlight-string'>JST</span> library."
+              }
+            ],
+            "groups": [],
+            "x": 0.4972479451323656,
+            "y": 0.4963768115942029,
+            "task_name": "login",
+            "retrySettings": null
+          },
+          "666e": {
+            "name": "getGoldenConfigTree",
+            "canvasName": "getGoldenConfigTree",
+            "summary": "Get summary of a Golden Config tree.",
+            "description": "Get summary of the specified Golden Config tree.",
+            "location": "Application",
+            "locationType": null,
+            "app": "ConfigurationManager",
+            "type": "automatic",
+            "displayName": "ConfigurationManager",
+            "variables": {
+              "incoming": {
+                "treeId": "620d54038b762315c090f75c"
+              },
+              "outgoing": {
+                "tree": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "matched": [
+              {
+                "key": "canvasName",
+                "highlightString": "<span class='highlight-string'>getGolden</span>ConfigTree"
+              }
+            ],
+            "groups": [],
+            "actor": "Pronghorn",
+            "x": 0.7435294117647059,
+            "y": 0.5230769230769231,
+            "scheduled": false
+          }
+        },
+        "transitions": {
+          "8018": {},
+          "8138": {},
+          "workflow_start": {
+            "4d11": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "workflow_end": {},
+          "4d11": {
+            "666e": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "666e": {
+            "workflow_end": {
+              "type": "standard",
+              "state": "success"
+            }
+          }
+        },
+        "type": "automation",
+        "tags": [],
+        "groups": []
+      }
+    },
+    {
+      "type": "json-forms",
+      "data": {
+        "id": "6185893a73fbd900d12d1afd",
+        "bindingSchema": {},
+        "created": "2021-11-05T19:42:50.237Z",
+        "createdBy": "clarisa.colton@itential.com",
+        "description": "",
+        "lastUpdated": "2022-01-27T16:07:09.493Z",
+        "lastUpdatedBy": "clarisa.colton@itential.com",
+        "name": "form-test",
+        "schema": {
+          "title": "form-test",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "struct": {
+          "type": "array",
+          "items": []
+        },
+        "uiSchema": {},
+        "validationSchema": {},
+        "version": "2020.1"
+      }
+    },
+    {
+      "type": "transformation",
+      "data": {
+        "_id": "61bb6f022f7f9e00e72ae6ed",
+        "name": "login",
+        "description": "",
+        "incoming": [
+          {
+            "$id": "login",
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "string"
+              },
+              "pw": {
+                "type": "string"
+              }
+            },
+            "required": []
+          }
+        ],
+        "outgoing": [
+          {
+            "$id": "user",
+            "type": "string"
+          },
+          {
+            "$id": "password",
+            "type": "string"
+          }
+        ],
+        "steps": [
+          {
+            "id": 1,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "login",
+              "ptr": "/user"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "user",
+              "ptr": ""
+            }
+          },
+          {
+            "id": 2,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "login",
+              "ptr": "/pw"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "password",
+              "ptr": ""
+            }
+          }
+        ],
+        "functions": [],
+        "comments": [],
+        "view": {
+          "col": 1,
+          "row": 5
+        },
+        "created": "2022-01-27T16:07:09.355Z",
+        "createdBy": {
+          "_id": "612660050e15bc6b822bcffc",
+          "provenance": "Itential-Okta",
+          "username": "clarisa.colton@itential.com"
+        },
+        "lastUpdated": "2022-01-27T16:07:09.355Z",
+        "lastUpdatedBy": {
+          "_id": "612660050e15bc6b822bcffc",
+          "provenance": "Itential-Okta",
+          "username": "clarisa.colton@itential.com"
+        },
+        "version": "3.17.7-2021.1.7",
+        "tags": []
+      }
+    }
+  ],
+  "readme": "<!-- This is a comment in md (Markdown) format, it will not be visible to the end user -->\n\n<!-- Update the below line with your Pre-Built name -->\n# Pre-Built Name\n\n<!-- Leave TOC intact unless you've added or removed headers -->\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n* [Additional Information](#additional-information)\n\n## Overview\n\n<!-- Write a few sentences about the Pre-Built and explain the use case(s) -->\n<!-- Avoid using the word Artifact. Please use Pre-Built, Pre-Built Transformation or Pre-Built Automation -->\n<!-- Ex.: The Migration Wizard enables IAP users to conveniently move their automation use cases between different IAP environments -->\n<!-- (e.g. from Dev to Pre-Production or from Lab to Production). -->\n\n<!-- Workflow(s) Image Placeholder - TO BE ADDED DIRECTLY TO GitLab -->\n<!-- REPLACE COMMENT BELOW WITH IMAGE OF YOUR MAIN WORKFLOW -->\n<!--\n<table><tr><td>\n  <img src=\"itential/pushToGithub/-/raw/refs/heads/main/images/workflow.png\" alt=\"workflow\" width=\"800px\">\n</td></tr></table>\n-->\n<!-- REPLACE COMMENT ABOVE WITH IMAGE OF YOUR MAIN WORKFLOW -->\n\n<!-- ADD ESTIMATED RUN TIME HERE -->\n<!-- e.g. Estimated Run Time: 34 min. -->\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n<!-- Include any other required apps or adapters in this list -->\n<!-- Ex.: EC2 Adapter -->\n* Itential Automation Platform\n  * `^2021.1`\n\n## Requirements\n\nThis Pre-Built requires the following:\n\n<!-- Unordered list highlighting the requirements of the Pre-Built -->\n<!-- EXAMPLE -->\n<!-- * cisco ios device -->\n<!-- * Ansible or NSO (with F5 NED) * -->\n\n## Features\n\nThe main benefits and features of the Pre-Built are outlined below.\n\n<!-- Unordered list highlighting the most exciting features of the Pre-Built -->\n<!-- EXAMPLE -->\n<!-- * Automatically checks for device type -->\n<!-- * Displays dry-run to user (asking for confirmation) prior to pushing config to the device -->\n<!-- * Verifies downloaded file integrity (using md5), will try to download again if failed -->\n\n\n## Future Enhancements\n\n<!-- OPTIONAL - Mention if the Pre-Built will be enhanced with additional features on the road map -->\n<!-- Ex.: This Pre-Built would support Cisco XR and F5 devices -->\n\n## How to Install\n\nTo install the Pre-Built:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the Pre-Built. \n* The Pre-Built can be installed from within App-Admin_Essential. Simply search for the name of your desired Pre-Built and click the install button (as shown below).\n\n<!-- REPLACE BELOW WITH IMAGE OF YOUR PUBLISHED PRE-BUILT -->\n<!--\n<table><tr><td>\n  <img src=\"itential/pushToGithub/-/raw/refs/heads/main/images/install.png\" alt=\"install\" width=\"600px\">\n</td></tr></table>\n-->\n<!-- REPLACE ABOVE WITH IMAGE OF YOUR PUBLISHED PRE-BUILT -->\n\n<!-- OPTIONAL - Explain if external components are required outside of IAP -->\n<!-- Ex.: The Ansible roles required for this Pre-Built can be found in the repository located at https://gitlab.com/itentialopensource/pre-built-automations/hello-world -->\n\n## How to Run\n\nUse the following to run the Pre-Built:\n\n<!-- Explain the main entrypoint(s) for this Pre-Built: Automation Catalog item, Workflow, Postman, etc. -->\n\n## Additional Information\n\nPlease use your Itential Customer Success account if you need support when using this Pre-Built."
+}
