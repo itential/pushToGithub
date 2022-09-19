@@ -1,0 +1,80 @@
+{
+  "_id": "61bb6f022f7f9e00e72ae6ed",
+  "name": "login",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "login",
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "string"
+        },
+        "pw": {
+          "type": "string"
+        }
+      },
+      "required": []
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "user",
+      "type": "string"
+    },
+    {
+      "$id": "password",
+      "type": "string"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "login",
+        "ptr": "/user"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "user",
+        "ptr": ""
+      }
+    },
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "login",
+        "ptr": "/pw"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "password",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 1,
+    "row": 5
+  },
+  "created": "2022-01-27T16:07:09.355Z",
+  "createdBy": {
+    "_id": "612660050e15bc6b822bcffc",
+    "provenance": "Itential-Okta",
+    "username": "clarisa.colton@itential.com"
+  },
+  "lastUpdated": "2022-01-27T16:07:09.355Z",
+  "lastUpdatedBy": {
+    "_id": "612660050e15bc6b822bcffc",
+    "provenance": "Itential-Okta",
+    "username": "clarisa.colton@itential.com"
+  },
+  "version": "3.17.7-2021.1.7",
+  "tags": []
+}
