@@ -1,0 +1,164 @@
+{
+  "canvasVersion": 1,
+  "created": "2021-10-26T13:50:28.114Z",
+  "createdVersion": "5.40.5-2021.1.28.0",
+  "created_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": true,
+    "email": ""
+  },
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "last_updated": "2022-02-22T19:37:12.229Z",
+  "last_updated_by": {
+    "provenance": "Itential-Okta",
+    "username": "clarisa.colton@itential.com",
+    "firstname": "Clarisa",
+    "inactive": false
+  },
+  "name": "certify",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      }
+    }
+  },
+  "tasks": {
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 1,
+      "y": 0.5
+    },
+    "4d11": {
+      "name": "transformation",
+      "canvasName": "transformation",
+      "summary": "login",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "61bb6f022f7f9e00e72ae6ed",
+          "variableMap": {
+            "login": {
+              "user": "sasa",
+              "pw": "abc123"
+            }
+          },
+          "options": {
+            "extractOutput": false,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "user": null,
+          "password": null
+        },
+        "decorators": [
+          {
+            "type": "encryption",
+            "pointer": "/outgoing/user"
+          },
+          {
+            "type": "encryption",
+            "pointer": "/outgoing/password"
+          }
+        ]
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "description",
+          "highlightString": "Perform a JSON Transformation using the <span class='highlight-string'>JST</span> library."
+        }
+      ],
+      "groups": [],
+      "x": 0.4972479451323656,
+      "y": 0.4963768115942029,
+      "task_name": "login",
+      "retrySettings": null
+    },
+    "666e": {
+      "name": "getGoldenConfigTree",
+      "canvasName": "getGoldenConfigTree",
+      "summary": "Get summary of a Golden Config tree.",
+      "description": "Get summary of the specified Golden Config tree.",
+      "location": "Application",
+      "locationType": null,
+      "app": "ConfigurationManager",
+      "type": "automatic",
+      "displayName": "ConfigurationManager",
+      "variables": {
+        "incoming": {
+          "treeId": "620d54038b762315c090f75c"
+        },
+        "outgoing": {
+          "tree": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>getGolden</span>ConfigTree"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.7435294117647059,
+      "y": 0.5230769230769231,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "8018": {},
+    "8138": {},
+    "workflow_start": {
+      "4d11": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "4d11": {
+      "666e": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "666e": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "type": "automation",
+  "tags": [],
+  "groups": []
+}
