@@ -1,0 +1,24 @@
+{
+  "id": "6185893a73fbd900d12d1afd",
+  "bindingSchema": {},
+  "created": "2021-11-05T19:42:50.237Z",
+  "createdBy": "clarisa.colton@itential.com",
+  "description": "",
+  "lastUpdated": "2022-01-27T16:07:09.493Z",
+  "lastUpdatedBy": "clarisa.colton@itential.com",
+  "name": "form-test",
+  "schema": {
+    "title": "form-test",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {}
+  },
+  "struct": {
+    "type": "array",
+    "items": []
+  },
+  "uiSchema": {},
+  "validationSchema": {},
+  "version": "2020.1"
+}
