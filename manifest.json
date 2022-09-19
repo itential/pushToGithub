@@ -1,0 +1,44 @@
+{
+  "bundleName": "@itentialopensource/final-ops-test",
+  "version": "0.0.1",
+  "fingerprint": "63288d9e78501471ebb1ce27",
+  "createdEpoch": "1663602078680",
+  "artifacts": [
+    {
+      "id": "test-ops",
+      "name": "test-ops",
+      "type": "automation",
+      "location": "/bundles/automations/test-ops.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "certify",
+      "name": "certify",
+      "type": "workflow",
+      "location": "/bundles/workflows/certify.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "form-test",
+      "name": "form-test",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/form-test.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "61bb6f022f7f9e00e72ae6ed",
+      "name": "login",
+      "type": "transformation",
+      "location": "/bundles/transformations/login.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}
